@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SuperMailer - Email Marketing</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      scroll-behavior: smooth;
+      color: #333;
+    }
+    header {
+      background: #ffe01b;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+    header button {
+      padding: 12px 25px;
+      font-size: 1.1em;
+      background: black;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .features, .how, .testimonials, .pricing, .signup, .faq, .stats, .contact, .advanced-features {
+      background: #f8f8f8;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .stats .card h3 {
+      font-size: 2.5em;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .stats .card p {
+      font-size: 1.1em;
+      color: #666;
+    }
+
+    .feature-grid, .price-grid, .testimonial-grid {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 260px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    input {
+      padding: 12px;
+      width: 280px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button[type="submit"] {
+      background: black;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #eee;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>SuperMailer</h1>
+    <p>Grow your audience and sales with easy email marketing.</p>
+    <button onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})">Start Now</button>
+  </header>
+
+  <section class="features">
+    <h2>Why Choose SuperMailer?</h2>
+    <p style="font-size: 1.1em; margin-bottom: 40px; color: #666;">The complete email marketing solution trusted by 50,000+ businesses across India</p>
+    
+    <div class="feature-grid">
+      <div class="card">
+        <h3>📧 Beautiful Email Campaigns</h3>
+        <p><strong>Professional Templates & Design</strong></p>
+        <p>Create stunning newsletters in minutes with our drag-and-drop editor. Choose from 50+ mobile-responsive templates or design from scratch.</p>
+        <ul style="text-align: left; margin-top: 15px;">
+          <li>✅ 50+ professional templates</li>
+          <li>✅ Drag & drop visual editor</li>
+          <li>✅ Mobile-responsive designs</li>
+          <li>✅ Custom HTML support</li>
+        </ul>
+      </div>
+      
+      <div class="card">
+        <h3>📊 Advanced Analytics & Insights</h3>
+        <p><strong>Data-Driven Marketing</strong></p>
+        <p>Get real-time insights into your campaign performance. Track what works and optimize for better results.</p>
+        <ul style="text-align: left; margin-top: 15px;">
+          <li>✅ Real-time open & click tracking</li>
+          <li>✅ Subscriber engagement scoring</li>
+          <li>✅ Geographic performance data</li>
+          <li>✅ ROI & revenue tracking</li>
+        </ul>
+      </div>
+      
+      <div class="card">
+        <h3>🔁 Smart Automations</h3>
+        <p><strong>Set It & Forget It Marketing</strong></p>
+        <p>Create automated email sequences that nurture leads and convert customers while you sleep.</p>
+        <ul style="text-align: left; margin-top: 15px;">
+          <li>✅ Welcome email sequences</li>
+          <li>✅ Birthday & anniversary campaigns</li>
+          <li>✅ Abandoned cart recovery</li>
+          <li>✅ Re-engagement campaigns</li>
+        </ul>
+      </div>
+      
+      <div class="card">
+        <h3>🚀 Lightning Fast Delivery</h3>
+        <p><strong>99.9% Delivery Rate</strong></p>
+        <p>Your emails reach the inbox, not spam. Our premium infrastructure ensures reliable delivery worldwide.</p>
+        <ul style="text-align: left; margin-top: 15px;">
+          <li>✅ 99.9% uptime guarantee</li>
+          <li>✅ Global delivery network</li>
+          <li>✅ Spam score optimization</li>
+          <li>✅ Dedicated IP options</li>
+        </ul>
+      </div>
+      
+      <div class="card">
+        <h3>🎯 Advanced Segmentation</h3>
+        <p><strong>Target the Right Audience</strong></p>
+        <p>Send personalized messages to specific segments based on behavior, demographics, and preferences.</p>
+        <ul style="text-align: left; margin-top: 15px;">
+          <li>✅ Behavioral segmentation</li>
+          <li>✅ Geographic targeting</li>
+          <li>✅ Purchase history filtering</li>
+          <li>✅ Custom field segmentation</li>
+        </ul>
+      </div>
+      
+      <div class="card">
+        <h3>🔒 Enterprise Security</h3>
+        <p><strong>Bank-Level Data Protection</strong></p>
+        <p>Your data is safe with industry-leading security measures and GDPR compliance built-in.</p>
+        <ul style="text-align: left; margin-top: 15px;">
+          <li>✅ 256-bit SSL encryption</li>
+          <li>✅ GDPR compliance tools</li>
+          <li>✅ Two-factor authentication</li>
+          <li>✅ SOC 2 Type II certified</li>
+        </ul>
+      </div>
+      
+      <div class="card">
+        <h3>🤝 24/7 Expert Support</h3>
+        <p><strong>Always Here to Help</strong></p>
+        <p>Get help when you need it with our award-winning support team and extensive knowledge base.</p>
+        <ul style="text-align: left; margin-top: 15px;">
+          <li>✅ 24/7 email support</li>
+          <li>✅ Live chat assistance</li>
+          <li>✅ Video tutorials library</li>
+          <li>✅ Dedicated account manager</li>
+        </ul>
+      </div>
+      
+      <div class="card">
+        <h3>💰 Affordable Pricing</h3>
+        <p><strong>Best Value in the Market</strong></p>
+        <p>Get enterprise features at a fraction of the cost. No hidden fees, no setup charges.</p>
+        <ul style="text-align: left; margin-top: 15px;">
+          <li>✅ 50% cheaper than competitors</li>
+          <li>✅ No setup or hidden fees</li>
+          <li>✅ Free 14-day trial</li>
+          <li>✅ Cancel anytime policy</li>
+        </ul>
+      </div>
+      
+      <div class="card">
+        <h3>🔌 Easy Integrations</h3>
+        <p><strong>Connect Your Favorite Tools</strong></p>
+        <p>Seamlessly integrate with your existing tools and platforms for a unified marketing experience.</p>
+        <ul style="text-align: left; margin-top: 15px;">
+          <li>✅ CRM integrations (Salesforce, HubSpot)</li>
+          <li>✅ E-commerce platforms (Shopify, WooCommerce)</li>
+          <li>✅ Social media platforms</li>
+          <li>✅ Zapier & API access</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div style="margin-top: 50px; padding: 30px; background: white; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+      <h3 style="color: #333; margin-bottom: 20px;">🏆 Why 50,000+ Businesses Choose SuperMailer</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px;">
+        <div style="text-align: center; padding: 20px;">
+          <div style="font-size: 2em; margin-bottom: 10px;">⚡</div>
+          <h4>10x Faster Setup</h4>
+          <p>Get started in minutes, not hours. Our intuitive interface makes email marketing accessible to everyone.</p>
+        </div>
+        <div style="text-align: center; padding: 20px;">
+          <div style="font-size: 2em; margin-bottom: 10px;">💎</div>
+          <h4>Premium Features</h4>
+          <p>Get advanced features like AI subject lines, predictive analytics, and automation workflows.</p>
+        </div>
+        <div style="text-align: center; padding: 20px;">
+          <div style="font-size: 2em; margin-bottom: 10px;">🌍</div>
+          <h4>Global Reach</h4>
+          <p>Send emails worldwide with our global infrastructure and multi-language support.</p>
+        </div>
+        <div style="text-align: center; padding: 20px;">
+          <div style="font-size: 2em; margin-bottom: 10px;">📈</div>
+          <h4>Proven Results</h4>
+          <p>Our customers see 300% higher engagement rates compared to traditional email platforms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how">
+    <h2>How It Works</h2>
+    <p style="font-size: 1.1em; margin-bottom: 40px; color: #666;">Get started with email marketing in 5 simple steps</p>
+    <div class="feature-grid">
+      <div class="card">
+        <h3>1️⃣ Sign Up</h3>
+        <p><strong>Quick Registration</strong></p>
+        <p>Create your free account in under 30 seconds. No credit card required for the 14-day trial.</p>
+        <ul style="text-align: left; margin-top: 15px;">
+          <li>✅ Instant account activation</li>
+          <li>✅ Free 14-day trial included</li>
+          <li>✅ No setup fees</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>2️⃣ Import Contacts</h3>
+        <p><strong>Build Your Audience</strong></p>
+        <p>Upload your contacts or build your list from scratch using our growth tools.</p>
+        <ul style="text-align: left; margin-top: 15px;">
+          <li>✅ CSV/Excel import</li>
+          <li>✅ Signup forms & popups</li>
+          <li>✅ CRM integrations</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>3️⃣ Create Campaign</h3>
+        <p><strong>Design Beautiful Emails</strong></p>
+        <p>Use our drag-and-drop editor with 50+ professional templates or start from scratch.</p>
+        <ul style="text-align: left; margin-top: 15px;">
+          <li>✅ Drag & drop editor</li>
+          <li>✅ Mobile-responsive designs</li>
+          <li>✅ AI-powered subject lines</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>4️⃣ Send & Track</h3>
+        <p><strong>Launch Your Campaign</strong></p>
+        <p>Send immediately or schedule for later. Monitor opens, clicks, and engagement in real-time.</p>
+        <ul style="text-align: left; margin-top: 15px;">
+          <li>✅ Schedule sending</li>
+          <li>✅ Real-time analytics</li>
+          <li>✅ Delivery reports</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>5️⃣ Analyze & Grow</h3>
+        <p><strong>Optimize Performance</strong></p>
+        <p>Use detailed insights to improve future campaigns and grow your subscriber base.</p>
+        <ul style="text-align: left; margin-top: 15px;">
+          <li>✅ A/B testing results</li>
+          <li>✅ Subscriber growth tracking</li>
+          <li>✅ ROI calculations</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div style="margin-top: 50px; padding: 30px; background: white; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+      <h3 style="color: #333; margin-bottom: 20px;">🚀 From Setup to Success in Minutes</h3>
+      <div style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; font-size: 1.1em;">
+        <span style="background: #ffe01b; padding: 8px 16px; border-radius: 20px; font-weight: bold;">Sign Up</span>
+        <span style="font-size: 1.5em;">→</span>
+        <span style="background: #e8f5e8; padding: 8px 16px; border-radius: 20px; font-weight: bold;">Import Contacts</span>
+        <span style="font-size: 1.5em;">→</span>
+        <span style="background: #e8f0ff; padding: 8px 16px; border-radius: 20px; font-weight: bold;">Create Campaign</span>
+        <span style="font-size: 1.5em;">→</span>
+        <span style="background: #ffe8e8; padding: 8px 16px; border-radius: 20px; font-weight: bold;">Send</span>
+        <span style="font-size: 1.5em;">→</span>
+        <span style="background: #f0e8ff; padding: 8px 16px; border-radius: 20px; font-weight: bold;">Analyze & Grow</span>
+      </div>
+      <p style="margin-top: 20px; color: #666; font-style: italic;">Average setup time: Just 5 minutes to send your first campaign!</p>
+    </div>
+  </section>
+
+  <section class="advanced-features">
+    <h2>Advanced Features</h2>
+    <div class="feature-grid">
+      <div class="card">
+        <h3>🎨 Drag & Drop Editor</h3>
+        <p>Create stunning emails without any coding knowledge. Our visual editor makes it easy.</p>
+      </div>
+      <div class="card">
+        <h3>📱 Mobile Optimized</h3>
+        <p>All emails are automatically optimized for mobile devices and tablets.</p>
+      </div>
+      <div class="card">
+        <h3>🔒 GDPR Compliant</h3>
+        <p>Stay compliant with data protection laws. Built-in privacy features included.</p>
+      </div>
+      <div class="card">
+        <h3>🌐 Multi-language</h3>
+        <p>Send campaigns in multiple languages and reach global audiences.</p>
+      </div>
+      <div class="card">
+        <h3>📅 Schedule Sending</h3>
+        <p>Schedule your campaigns for optimal send times across different time zones.</p>
+      </div>
+      <div class="card">
+        <h3>🤖 AI Subject Lines</h3>
+        <p>Use AI to generate compelling subject lines that improve open rates.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <h2>What Our Users Say</h2>
+    <div class="testimonial-grid">
+      <div class="card">
+        <p>"SuperMailer helped us grow our subscriber list by 300% in just 6 months. The automation features are incredible!"</p>
+        <strong>- Priya Sharma, E-commerce Store Owner</strong>
+      </div>
+      <div class="card">
+        <p>"Best email marketing tool I've used. Simple interface, powerful features, and great support team."</p>
+        <strong>- Rajesh Kumar, Digital Marketer</strong>
+      </div>
+      <div class="card">
+        <p>"The AI subject line feature increased our open rates by 45%. Highly recommended for any business!"</p>
+        <strong>- Meera Patel, SaaS Founder</strong>
+      </div>
+      <div class="card">
+        <p>"Switched from expensive alternatives to SuperMailer. Same features at half the cost. Love it!"</p>
+        <strong>- Amit Singh, Restaurant Chain Owner</strong>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing">
+    <h2>Pricing</h2>
+    <div class="price-grid">
+      <div class="card">
+        <h3>Pro Plan</h3>
+        <p><strong>₹1,000/month</strong></p>
+        <p><strong>📧 10,000 emails per month</strong></p>
+        <p><strong>👥 Unlimited subscribers</strong></p>
+        <ul>
+          <li>✅ No subscriber limits - upload unlimited contacts</li>
+          <li>✅ 50+ professional email templates</li>
+          <li>✅ Advanced automation workflows</li>
+          <li>✅ Real-time analytics & reporting</li>
+          <li>✅ A/B testing for campaigns</li>
+          <li>✅ Priority email support</li>
+          <li>✅ GDPR compliance tools</li>
+        </ul>
+        <button onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})">
+          Start Free Trial
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-grid">
+      <div class="card">
+        <h3>❓ Is there a free trial?</h3>
+        <p>Yes! You get 14 days free trial with up to 1,000 free emails to test all features.</p>
+      </div>
+      <div class="card">
+        <h3>❓ Can I cancel anytime?</h3>
+        <p>Absolutely! No long-term contracts. Cancel your subscription anytime with one click.</p>
+      </div>
+      <div class="card">
+        <h3>❓ Do you provide support?</h3>
+        <p>Yes! We offer 24/7 email support and live chat during business hours.</p>
+      </div>
+      <div class="card">
+        <h3>❓ What payment methods do you accept?</h3>
+        <p>We accept all major credit cards, UPI, and net banking for Indian customers.</p>
+      </div>
+      <div class="card">
+        <h3>❓ Is my data secure?</h3>
+        <p>Yes! We use bank-level encryption and never share your data with third parties.</p>
+      </div>
+      <div class="card">
+        <h3>❓ Can I import my existing contacts?</h3>
+        <p>Yes! Import from CSV files, Excel, or connect with popular CRM systems.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <h2>Trusted by Thousands</h2>
+    <div class="feature-grid">
+      <div class="card">
+        <h3>50,000+</h3>
+        <p>Active Users</p>
+      </div>
+      <div class="card">
+        <h3>10M+</h3>
+        <p>Emails Sent Monthly</p>
+      </div>
+      <div class="card">
+        <h3>99.9%</h3>
+        <p>Uptime Guarantee</p>
+      </div>
+      <div class="card">
+        <h3>4.8★</h3>
+        <p>Average Rating</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2>Get in Touch</h2>
+    <div class="feature-grid">
+      <div class="card">
+        <h3>📧 Email Support</h3>
+        <p>support@supermailer.in</p>
+        <p>24/7 response within 2 hours</p>
+      </div>
+      <div class="card">
+        <h3>💬 Live Chat</h3>
+        <p>Available Mon-Fri 9 AM - 6 PM IST</p>
+        <p>Instant help for urgent issues</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="signup" id="signup">
+    <h2>Sign Up Free</h2>
+    <form onsubmit="return submitForm()">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <button type="submit">Join Now</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 SuperMailer.in - All rights reserved.</p>
+  </footer>
+
+  <script>
+    function submitForm() {
+      alert("Thank you for signing up!");
+      return false;
+    }
+  </script>
+
+</body>
+</html>
